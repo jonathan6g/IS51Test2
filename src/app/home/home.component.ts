@@ -8,9 +8,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  data: any = {};
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe((sss) => {
+      this.data = sss;
+      console.log('this.data from home......', this.data);
+    });
 
   }
 
